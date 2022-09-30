@@ -1,4 +1,5 @@
 import { Application, Context } from "oak";
+import client from "./models/client.ts";
 
 /**
  * import routes
@@ -20,6 +21,15 @@ class App {
 
   constructor() {
     this.app = new Application();
+
+    client
+      .connect()
+      .then(() => {
+        console.log("Connected");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
     this.app.use(async (ctx: Context, next) => {
       ctx.state.JournalUC = JournalUC;

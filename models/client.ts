@@ -1,9 +1,9 @@
 import { Client } from "postgres";
 
 const client = new Client({
-  user: "postgres",
-  password: "123456",
-  database: "postgres",
+  user: "ipmugo_admin",
+  password: "ipmugo_admin",
+  database: "ipmugo_library",
   hostname: "localhost",
 });
 

@@ -1,13 +1,14 @@
-import client from "../models/client.ts";
+import journal from "../models/journal.ts";
 
 class JournalRepository {
-  client: typeof client;
+  journal: typeof journal;
 
   constructor() {
-    this.client = client;
+    this.journal = journal;
   }
-  findAll = () => {
-    return null;
+
+  findAll = async () => {
+    return await this.journal.findAll();
   };
   findOne = () => {
     return null;
