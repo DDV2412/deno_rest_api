@@ -7,10 +7,12 @@ class Journal {
     this.client = client;
   }
   findAll = async () => {
-    const data = await this.client.queryArray(`select * from "Journals";`);
+    const data = await this.client.queryArray(`select * from journals;`);
 
     return data.rows;
   };
+
+  
 }
 
 export default new Journal();
